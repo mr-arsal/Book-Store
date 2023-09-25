@@ -1,69 +1,23 @@
-# base
+# Book Store Project Roadmap
 
-## Project setup
+Roadmap to achieve the milestones for Book Store project in 3 days.
 
-```
-# yarn
-yarn
+## Day 1: 
 
-# npm
-npm install
+- Implement user registration, login authentication.
+- Book Catalog and Search: Implement book listing and basic search functionality.
+- Develop detailed book pages, including customer reviews and ratings.
+- Shopping cart functionality.
 
-# pnpm
-pnpm install
 
-# pnpm
-bun install
-```
+- Implement a user dashboard and order processing.
+- Implement wishlist and a basic recommendation system.
+- Develop user profile pages to manage their profiles and order history.
 
-### Compiles and hot-reloads for development
 
-```
-# yarn
-yarn dev
+## Day 2: 
 
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# bun
-bun run dev
-```
-
-### Compiles and minifies for production
-
-```
-# yarn
-yarn build
-
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# bun
-bun run build
-```
-
-### Lints and fixes files
-
-```
-# yarn
-yarn lint
-
-# npm
-npm run lint
-
-# pnpm
-pnpm lint
-
-# bun
-bun run lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://vitejs.dev/config/).
+- Implement a admin dashboard.
+- Admin dashboard to manage and track orders, view customer details, process payments, generate invoices, and handle shipping logistics.
+- Implement security best SEO practices.
+- Newsletter Subscription
