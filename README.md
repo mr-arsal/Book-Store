@@ -9,13 +9,14 @@ Roadmap to achieve the milestones for Book Store project in 3 days.
 - Develop detailed book pages, including customer reviews and ratings.
 - Shopping cart functionality.
 
+## Day 2: 
 
 - Implement a user dashboard and order processing.
 - Implement wishlist and a basic recommendation system.
 - Develop user profile pages to manage their profiles and order history.
 
 
-## Day 2: 
+## Day 3: 
 
 - Implement a admin dashboard.
 - Admin dashboard to manage and track orders, view customer details, process payments, generate invoices, and handle shipping logistics.
