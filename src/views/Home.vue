@@ -1,6 +1,8 @@
 <template>
   <div>
 
+    <NavBar></NavBar>
+
     <v-carousel cycle height="400" hide-delimiter-background show-arrows="hover" class="h-screen">
       <v-carousel-item v-for="(slide, i) in slides" :key="i">
 
@@ -21,23 +23,44 @@
 
               <!-- Add a button -->
 
-              <router-link to="/signup" class="text-decoration-none">
-                <v-btn class="mt-8" color="teal-darken-3">Explore Products</v-btn>
+              <router-link to="/products" class="text-decoration-none">
+                <v-btn prepend-icon="mdi-cart" class="mt-8" color="teal-darken-3 me-3">Explore Products</v-btn>
               </router-link>
             </div>
           </v-sheet>
         </v-img>
       </v-carousel-item>
     </v-carousel>
+
+    <!-- Products Heading -->
+
+    <div class="text-center mb-5 mt-7 text-h4 font-weight-medium"
+      style="text-decoration: underline; text-decoration-color: #00695C">Best Selling Products</div>
+
+    <!-- Products Component -->
+
+    <HomeProducts></HomeProducts>
+
+    <!-- Footer Component -->
+
+    <Footer></Footer>
+
   </div>
 </template>
 
 <script>
-// import NavBar from "@/components/NavBar.vue";
-// import Footer from "@/components/Footer.vue";
+import NavBar from "@/components/NavBar.vue";
+import HomeProducts from "@/components/HomeProducts.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
+
   name: "Home",
+  components: {
+    NavBar,
+    HomeProducts,
+    Footer
+  },
   data() {
     return {
       slides: [{
@@ -64,5 +87,9 @@ export default {
 <style>
 .landing-page-title {
   margin-left: 10%;
+}
+
+.mdi-circle::before {
+  color: white;
 }
 </style>
