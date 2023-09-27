@@ -1,0 +1,26 @@
+<template>
+    <div>
+        <v-container class=" mb-6">
+            <v-row align="center" no-gutters style="height: 100vh;">
+                <v-col cols="12" xs="12" md="6" lg="6">
+                    <v-sheet class="pa-2 ma-2">
+                        Book Tile
+                    </v-sheet>
+                    <v-sheet class="pa-2 ma-2">
+                        Book Description
+                    </v-sheet>
+                    <v-sheet class="pa-2 ma-2">
+                        Book Price
+                    </v-sheet>
+                </v-col>
+                <v-col cols="12" xs="12" md="6" lg="6">
+                    <v-img class="align-end text-white" height="400"
+                        src="https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books_23-2149334866.jpg"
+                        cover>
+                    </v-img>
+                </v-col>
+            </v-row>
+        </v-container>
+    </div>
+</template>
+
