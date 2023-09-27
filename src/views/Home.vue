@@ -6,22 +6,22 @@
     <v-carousel cycle height="400" hide-delimiter-background show-arrows="hover" class="h-screen">
       <v-carousel-item v-for="(slide, i) in slides" :key="i">
 
-        <!-- Add an image here -->
+        <!-- Image -->
 
         <v-img :src="slide.imageSrc" height="100%" cover>
 
-          <!-- Add a transparent overlay for text -->
+          <!-- Transparent overlay for text -->
 
           <v-sheet color="rgba(0, 0, 0, 0.5)" height="100%">
 
             <div class="d-flex flex-column fill-height justify-center landing-page-title">
 
-              <!-- Add heading text -->
+              <!-- Heading text -->
 
               <h2 class="text-h2 text-left" style="color: white">{{ slide.heading }}</h2>
               <p class="text-white mt-3 mr-7">{{ slide.text }}</p>
 
-              <!-- Add a button -->
+              <!-- Button -->
 
               <router-link to="/products" class="text-decoration-none">
                 <v-btn prepend-icon="mdi-cart" class="mt-8" color="teal-darken-3 me-3">Explore Products</v-btn>
