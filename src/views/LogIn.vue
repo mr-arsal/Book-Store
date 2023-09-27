@@ -52,10 +52,9 @@ export default {
     },
     methods: {
         submitForm() {
-            this.submitted = true; // Set submitted to true
+            this.submitted = true;
             if (this.$refs.loginForm.checkValidity()) {
                 console.log("Form is valid. Logging in...");
-                // Perform the actual login action here
             } else {
                 console.log("Form is invalid. Please correct the errors.");
             }

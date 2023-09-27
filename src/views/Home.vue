@@ -1,7 +1,11 @@
 <template>
   <div>
 
+    <!-- Navbar Component -->
+
     <NavBar></NavBar>
+
+    <!-- Carousal -->
 
     <v-carousel cycle height="400" hide-delimiter-background show-arrows="hover" class="h-screen">
       <v-carousel-item v-for="(slide, i) in slides" :key="i">
@@ -31,6 +35,8 @@
         </v-img>
       </v-carousel-item>
     </v-carousel>
+
+    <!--  -->
 
     <!-- Products Heading -->
 
