@@ -47,6 +47,12 @@
 
     <HomeProducts></HomeProducts>
 
+    <!-- Explore products Button -->
+
+    <!-- <router-link to="/products" class="text-decoration-none">
+      <v-btn prepend-icon="mdi-cart" class="mt-8" color="teal-darken-3 me-3">Explore Products</v-btn>
+    </router-link> -->
+
     <!-- Footer Component -->
 
     <Footer></Footer>
