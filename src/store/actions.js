@@ -38,7 +38,7 @@ export const userLogin = async ({ commit }, loginData) => {
     commit('USER_LOGIN', response.data);
 
     // Get Token
-    const token = response.data.token;
+    const token = response.data.access_token;
     commit('USER_TOKEN', token);
     // }
     // catch (error) {

@@ -24,4 +24,8 @@ export const USER_LOGIN = (state, login) => {
 
 export const USER_TOKEN = (state, token) => {
     state.token = token;
+
+    // Update local storage with the token
+    localStorage.setItem('token', token);
+  
 }
