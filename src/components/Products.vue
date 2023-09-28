@@ -13,7 +13,8 @@
                     <v-img class="align-end text-white" height="400" :src="book.cover_image_url" cover>
                     </v-img>
 
-                    <v-card-text class="card-title card-title-size" style="text-decoration: underline; text-decoration-color: #00695C">
+                    <v-card-text class="card-title card-title-size"
+                        style="text-decoration: underline; text-decoration-color: #00695C">
                         <div><strong>{{ book.title }}</strong></div>
                     </v-card-text>
                     <v-card-text class="pb-0">
@@ -30,7 +31,7 @@
                         <v-btn prepend-icon="mdi-cart" color="teal-darken-3 ma-2" variant="tonal">
                             Add to cart
                         </v-btn>
-                        <router-link :to="{name: 'PoductDetails' , params: {id: book.id}}"  class="text-decoration-none">
+                        <router-link :to="{ name: 'PoductDetails', params: { id: book.id } }" class="text-decoration-none">
                             <v-btn color="teal-darken-3 ma-2" variant="tonal">
                                 Details
                             </v-btn>

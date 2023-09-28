@@ -24,7 +24,7 @@
                         <v-btn prepend-icon="mdi-cart" color="teal-darken-3 ma-2" variant="tonal">
                             Add to cart
                         </v-btn>
-                        <router-link to="/productdetails" class="text-decoration-none">
+                        <router-link :to="{ name: 'PoductDetails', params: { id: book.id } }" class="text-decoration-none">
                             <v-btn color="teal-darken-3 ma-2" variant="tonal">
                                 Details
                             </v-btn>

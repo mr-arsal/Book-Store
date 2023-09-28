@@ -54,7 +54,21 @@ export default {
         submitForm() {
             this.submitted = true;
             if (this.$refs.loginForm.checkValidity()) {
-                console.log("Form is valid. Logging in...");
+                // console.log("Form is valid. Logging in...");
+                const loginData = {
+                    email: this.email,
+                    password: this.password,
+                };
+                this.$store.dispatch('userLogin', loginData)
+                    // Console User Data
+                    // console.log(userData)
+
+                    .then(() => {
+                        this.$router.push('/');
+                    })
+                    .catch((error) => {
+                        console.error('Login failed:', error);
+                    });
             } else {
                 console.log("Form is invalid. Please correct the errors.");
             }
