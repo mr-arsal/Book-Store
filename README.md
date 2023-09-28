@@ -35,14 +35,26 @@ Sign-Up Page:
 - Design a registration form comprising fields for username, email, password, and password confirmation.
 - Implement validation and error-handling features for the registration process.
 
-## Day 2: 
+## Day 2: Completed Tasks below.
+
+Today's work focused on learning and implementing Vuex, creating a product catalog, and integrating APIs for login, signup, and the products page. 
+
+Learning Vuex - Crucial for centralized state management in Vue.js apps.
+
+Implementing Product Catalog - Important for e-commerce/content websites, aided by Vuex.
+
+Showing All Books - Specific task within catalog implementation, demonstrating Vuex usage.
+
+Integrating API for Login/Signup - Essential for secure user authentication.
+
+Integrating API for Products Page - Critical for populating product catalog with real data.
+
+
+## Day 3: 
 
 - Implement a user dashboard and order processing.
 - Implement wishlist and a basic recommendation system.
 - Develop user profile pages to manage their profiles and order history.
-
-
-## Day 3: 
 
 - Implement a admin dashboard.
 - Admin dashboard to manage and track orders, view customer details, process payments, generate invoices, and handle shipping logistics.
