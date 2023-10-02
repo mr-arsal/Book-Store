@@ -49,8 +49,17 @@ Integrating API for Login/Signup - Essential for secure user authentication.
 
 Integrating API for Products Page - Critical for populating product catalog with real data.
 
+## Day 3: Completed Tasks
 
-## Day 3: 
+Integrated API using Vuex.
+
+- Login Page
+- Logout Page
+- Signup Page
+- Add To Cart
+- Cart Books
+
+## Day 4: 
 
 - Implement a user dashboard and order processing.
 - Implement wishlist and a basic recommendation system.
