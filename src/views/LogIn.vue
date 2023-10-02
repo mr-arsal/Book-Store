@@ -64,7 +64,7 @@ export default {
                     // console.log(userData)
 
                     .then(() => {
-                        this.$router.push('/');
+                        this.$router.push('/checkout');
                     })
                     .catch((error) => {
                         console.error('Login failed:', error);
@@ -108,23 +108,15 @@ export default {
 
 }
 
-
-
 /* Style for invalid input fields */
 
 .v-text-field.error--text {
-
     border-color: red;
-
 }
-
-
 
 /* Style for valid input fields */
 
 .v-text-field.success--text {
-
     border-color: green;
-
 }
-</style>s
+</style>

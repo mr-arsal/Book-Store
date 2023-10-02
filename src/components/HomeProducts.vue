@@ -11,7 +11,7 @@
                         <div><strong>{{ book.title }}</strong></div>
                     </v-card-text>
                     <v-card-text class="pb-0">
-                        <div class="card-subheadings"><Strong>Price: </Strong>{{ book.price }}</div>
+                        <div class="card-subheadings"><Strong>Price:</Strong> ${{ book.price }}</div>
                     </v-card-text>
                     <v-card-text class="pb-5 pt-4">
                         <div class="card-subheadings"><Strong>Description: </Strong>{{ book.description }}</div>
@@ -21,16 +21,33 @@
                     </v-card-text>
 
                     <v-card-actions>
-                        <v-btn prepend-icon="mdi-cart" color="teal-darken-3 ma-2" variant="tonal">
-                            Add to cart
-                        </v-btn>
+                        <router-link to="">
+                            <v-btn @click="addToCart(book.id, book.price); snackbar = true" prepend-icon="mdi-cart"
+                                color="teal-darken-3 ma-2" variant="tonal">
+                                Add to cart
+                            </v-btn>
+                        </router-link>
+
+
+                        <!-- Snackbar -->
+
+                        <v-snackbar v-model="snackbar" :timeout="timeout">
+                            {{ text }}
+
+                            <template v-slot:actions>
+                                <v-btn color="blue" variant="text" @click="snackbar = false">
+                                    Keep Shopping
+                                </v-btn>
+                            </template>
+                        </v-snackbar>
+
+                        <!-- ------------ -->
+
                         <router-link :to="{ name: 'PoductDetails', params: { id: book.id } }" class="text-decoration-none">
                             <v-btn color="teal-darken-3 ma-2" variant="tonal">
                                 Details
                             </v-btn>
                         </router-link>
-
-                        <v-icon class="card-heart-icon">mdi-heart</v-icon>
 
                     </v-card-actions>
                 </v-card>
@@ -41,16 +58,16 @@
 
 <script>
 import { allBooks } from "@/store/actions";
+// import { mapActions } from 'vuex';
 
 
 export default {
     name: "HomeProducts",
-
-    data() {
-        return {
-
-        };
-    },
+    data: () => ({
+        snackbar: false,
+        text: 'Book has added to cart',
+        timeout: 2000,
+    }),
     computed: {
         books() {
             return this.$store.state.books;
@@ -58,6 +75,15 @@ export default {
     },
     mounted() {
         this.$store.dispatch('allBooks')
+    },
+    methods: {
+        addToCart(id, price) {
+            this.$store.dispatch('addProductToCart', {
+                bookid: id,
+                bookprice: price,
+                quantity: 1
+            })
+        }
     },
 }
 

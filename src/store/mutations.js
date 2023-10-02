@@ -25,7 +25,32 @@ export const USER_LOGIN = (state, login) => {
 export const USER_TOKEN = (state, token) => {
     state.token = token;
 
-    // Update local storage with the token
     localStorage.setItem('token', token);
-  
+
+}
+
+// Login User Id
+
+export const USER_ID = (state, userId) => {
+    state.userId = userId;
+
+    localStorage.setItem('userId', userId);
+
+}
+
+// Add Books to cart
+
+export const ADD_TO_CART = (state, { bookid, quantity, bookprice }) => {
+    state.cart.push({
+        bookid,
+        quantity,
+        bookprice
+    });
+}
+
+
+// Cart Books
+
+export const CART_BOOKS = (state, cartBook) => {
+    state.cartBook = cartBook;
 }

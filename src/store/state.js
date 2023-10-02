@@ -13,4 +13,15 @@ export default {
 
     // User token
     token: null,
+
+    // Login User Id
+
+    userId: null,
+
+    // Add to cart
+    cart: [],
+
+    // Cart 
+
+    cartBook: []
 }

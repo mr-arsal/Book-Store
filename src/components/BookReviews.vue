@@ -21,6 +21,15 @@
             style="text-decoration: underline; text-decoration-color: #00695C">
             Reviews
         </div>
+        <v-row>
+            <v-col xs="12" md="8" lg="8">
+                <v-text-field class="w-50" label="Book Review Here" required></v-text-field>
+            </v-col>
+            <v-col>
+
+            </v-col>
+        </v-row>
+
     </v-container>
 </template>
   

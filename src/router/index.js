@@ -82,6 +82,23 @@ const routes = [
         component: () => import('@/views/ProductDetails.vue'),
         props: true
       },
+
+      // Add To Cart
+      {
+        path: '/checkout',
+        name: 'Checkout',
+        component: () => import('@/components/Checkout.vue'),
+        props: true
+      },
+
+      // Cart Books
+      {
+        path: '/cart',
+        name: 'CartBooks',
+        component: () => import('@/views/CartBooks.vue'),
+        props: true
+      },
+
     ],
   },
 ]
