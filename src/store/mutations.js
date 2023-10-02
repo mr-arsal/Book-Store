@@ -54,3 +54,12 @@ export const ADD_TO_CART = (state, { bookid, quantity, bookprice }) => {
 export const CART_BOOKS = (state, cartBook) => {
     state.cartBook = cartBook;
 }
+
+// Remove Cart Book
+
+export const REMOVE_FROM_CART = (state, cartId) => {
+    const index = state.cartBook.findIndex(book => book.cart_id === cartId);
+    if (index !== -1) {
+        state.cartBook.splice(index, 1);
+    }
+};

@@ -64,7 +64,7 @@ export default {
                     // console.log(userData)
 
                     .then(() => {
-                        this.$router.push('/checkout');
+                        this.$router.push('/');
                     })
                     .catch((error) => {
                         console.error('Login failed:', error);

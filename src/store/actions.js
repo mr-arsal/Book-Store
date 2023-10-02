@@ -107,3 +107,26 @@ export const cartBooks = ({ commit }) => {
         console.error('No user token found in local storage.');
     }
 }
+
+// Remove Cart Book
+
+export const deleteFromCart = ({ commit }, cartId) => {
+    const userToken = localStorage.getItem('token');
+
+    if (userToken) {
+        const headers = {
+            'Authorization': `Bearer ${userToken}`,
+            'Content-Type': 'application/json',
+        };
+
+        axios.delete(`http://10.0.10.211:3300/api/remove/${cartId}`, { headers })
+            .then(response => {
+                commit('REMOVE_FROM_CART', cartId);
+            })
+            .catch(error => {
+                console.error('Error deleting book from the cart:', error);
+            });
+    } else {
+        console.error('No user token found in local storage.');
+    }
+};

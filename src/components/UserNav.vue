@@ -1,38 +1,65 @@
 <template>
-    <v-card class="h-screen">
-        <v-layout>
-            <v-navigation-drawer expand-on-hover rail>
-                <v-list>
-                    <v-list-item
-                        prepend-avatar="https://st3.depositphotos.com/15648834/17930/v/450/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"
-                        title="User Account" subtitle="sandra_a88@gmailcom"></v-list-item>
-                </v-list>
+    <v-app-bar color="teal-darken-3">
+        <!-- Removed the v-app-bar-nav-icon -->
+        <v-toolbar-title class="text-center"><router-link to="/" class="text-decoration-none text-white">Book
+                Store</router-link></v-toolbar-title>
+        <template v-slot:extension>
+            <v-tabs class="mx-auto" align-with-title>
+                <router-link to="/userdashboard/profile" class="text-decoration-none text-white">User
+                    Profile</router-link> &nbsp;&nbsp;| &nbsp;&nbsp;
 
-                <v-divider></v-divider>
+                <router-link to="/userdashboard/orderlist" class="text-decoration-none text-white">Order
+                    List</router-link> &nbsp;&nbsp;| &nbsp;&nbsp;
 
-                <v-list density="compact" nav>
-                    <v-list-item prepend-icon="mdi-folder" title="User Profile" value="myfiles"
-                        @click="navigateToUserProfile"></v-list-item>
-                    <v-list-item prepend-icon="mdi-account-multiple" title="Order List" value="shared"></v-list-item>
-                    <v-list-item prepend-icon="mdi-star" title="Track Your Order" value="starred"></v-list-item>
-                </v-list>
-            </v-navigation-drawer>
+                <router-link to="/userdashboard/trackorder" class="text-decoration-none text-white">Track Your
+                    Order</router-link> &nbsp;&nbsp;| &nbsp;&nbsp;
 
-            <v-main style="height: 250px"></v-main>
-        </v-layout>
-    </v-card>
-</template>
+                <!-- Conditionf for login and logout button -->
+                <router-link to="/login" class="text-decoration-none text-white" v-if="!isLoggedIn">Login</router-link>
+                <router-link to="/" v-else class="text-decoration-none text-white" @click="logout">Logout</router-link>
 
+            </v-tabs>
+        </template>
+    </v-app-bar>
+</template>  
+  
 <script>
 export default {
-    name: 'UserNav',
-    methods: {
-        navigateToUserProfile() {
-            // Use router.push to navigate to the desired route
-            this.$router.push({ name: 'UserProfile' }); // Replace 'UserProfile' with your actual route name
+    name: 'NavBar',
+    computed: {
+        isLoggedIn() {
+            return localStorage.getItem('userId') && localStorage.getItem('token');
         },
-
-        // Other methods for navigation to different routes
     },
-}
+    methods: {
+        logout() {
+            const userToken = localStorage.getItem('token');
+
+            if (userToken) {
+                const headers = {
+                    'Authorization': `Bearer ${userToken}`,
+                    'Content-Type': 'application/json',
+                };
+
+                fetch('http://10.0.10.211:3300/api/logout', {
+                    method: 'POST',
+                    headers: headers,
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            localStorage.removeItem('userId');
+                            localStorage.removeItem('token');
+                            window.location.reload();
+                        } else {
+
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Logout failed:', error);
+                    });
+            }
+        },
+    },
+
+};
 </script>

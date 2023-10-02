@@ -1,14 +1,12 @@
 <template>
-    <UserNav></UserNav>
     <v-app>
+        <UserNav></UserNav>
         <v-main>
-
             <router-view></router-view>
-
         </v-main>
-
     </v-app>
 </template>
+  
   
 <script>
 

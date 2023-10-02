@@ -21,8 +21,8 @@
                     <td>{{ book.quantity }}</td>
                     <td>{{ book.price }}</td>
                     <td class="text-center">
-                        <v-btn color="primary" class="mr-2">Edit</v-btn>
-                        <v-btn color="error">Delete</v-btn>
+                        <v-btn color="error" class="mr-2" @click="deleteBook(book.id)">Delete</v-btn>
+                        <router-link to="/checkout"><v-btn color="teal-darken-3">Purchase</v-btn></router-link>
                     </td>
                 </tr>
 
@@ -43,6 +43,11 @@ export default {
     components: {
         NavBar,
         Footer
+    },
+    methods: {
+        deleteBook(cartId) {
+            this.$store.dispatch('deleteFromCart', cartId);
+        }
     },
     computed: {
         cartBook() {

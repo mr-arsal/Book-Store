@@ -25,44 +25,28 @@ const routes = [
         component: () => import('@/views/LogIn.vue'),
       },
 
-      // User Dashboard Nested Children
-      // {
-      //   path: '/userdashboard',
-      //   name: 'UserDashboard',
-      //   component: () => import('@/components/UserDashboard.vue'),
-      //   children: [
-      //     {
-      //       path: 'profile',
-      //       name: 'UserProfile',
-      //       component: () => import('@/components/UserProfile.vue')
-      //     },
-      //     {
-      //       path: 'orderlist',
-      //       name: 'OrderList',
-      //       component: () => import('@/components/OrderList.vue')
-      //     },
-      //     {
-      //       path: 'trackorder',
-      //       name: 'UserTrackOrder',
-      //       component: () => import('@/components/UserTrackOrder.vue')
-      //     }
-      //   ]
-      // },
-
       {
         path: "/userdashboard",
         name: "UserDashboard",
         component: () => import('@/components/UserDashboard.vue'),
-        children:
-          [
-            {
-              path: "profile",
-              name: "UserProfile",
-              component: () => import('@/components/UserProfile.vue'),
-            },
-          ]
+        children: [
+          {
+            path: "profile",
+            name: "UserProfile",
+            component: () => import('@/components/UserProfile.vue'),
+          },
+          {
+            path: 'orderlist',
+            name: 'OrderList',
+            component: () => import('@/components/OrderList.vue')
+          },
+          {
+            path: 'trackorder',
+            name: 'UserTrackOrder',
+            component: () => import('@/components/UserTrackOrder.vue')
+          }
+        ],
       },
-
 
       // -------------------------------------------------------
       {

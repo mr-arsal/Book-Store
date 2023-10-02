@@ -16,7 +16,11 @@
                 <v-tab prepend-icon="mdi-login" v-if="!isLoggedIn">
                     <router-link to="/login" class="text-decoration-none text-white">Login</router-link>
                 </v-tab>
-                <v-tab v-else prepend-icon="mdi-account" @click="logout">Logout</v-tab>
+                <!-- <v-tab v-else prepend-icon="mdi-account" @click="logout">Logout</v-tab> -->
+
+                <v-tab v-else prepend-icon="mdi-account">
+                    <router-link to="/userdashboard" class="text-decoration-none text-white">Dashboard</router-link>
+                </v-tab>
 
                 <v-tab prepend-icon="mdi-account">
                     <router-link to="/signup" class="text-decoration-none text-white">Signup</router-link>
@@ -54,6 +58,7 @@ export default {
                         if (response.ok) {
                             localStorage.removeItem('userId');
                             localStorage.removeItem('token');
+                            window.location.reload();
 
                         } else {
 

@@ -1,35 +1,38 @@
-<!-- <template>
-    
-    <div class="text-center mb-5 mt-7 text-h5 font-weight-medium"
-        style="text-decoration: underline; text-decoration-color: #00695C">Average Rating of Book 3/5</div>
-    <div class="text-center mb-5 mt-7 text-h4 font-weight-medium"
-        style="text-decoration: underline; text-decoration-color: #00695C">Reviews</div>
-</template> -->
-
-
 <template>
     <v-container>
-        <div class="text-center mb-5 mt-7 text-h5 font-weight-medium"
-            style="text-decoration: underline; text-decoration-color: #00695C">
-            Average Rating of Book {{ averageRating }}/5
-        </div>
-        <div class="text-center">
-            <v-rating v-model="userRating" color="#00695C" @input="updateAverageRating"></v-rating>
-        </div>
-
-        <div class="text-center mb-5 mt-7 text-h4 font-weight-medium"
-            style="text-decoration: underline; text-decoration-color: #00695C">
-            Reviews
-        </div>
         <v-row>
-            <v-col xs="12" md="8" lg="8">
-                <v-text-field class="w-50" label="Book Review Here" required></v-text-field>
+            <!-- Left Column for Reviews -->
+            <v-col cols="6">
+                <h1 style="text-decoration: underline; text-decoration-color: #00695C">Reviews</h1>
+                <v-list>
+                    <v-list-item v-for="(review, index) in reviews" :key="index">
+                        <v-list-item-title>
+                            <strong>{{ review.title }}</strong>
+                        </v-list-item-title>
+                    </v-list-item>
+                </v-list>
+                <div v-if="reviews.length === 0">
+                    <p>No reviews yet.</p>
+                </div>
+                <!-- Option to Add a Review -->
+                <v-form @submit.prevent="addReview">
+                    <v-text-field v-model="newReview.title" label="Review Title" required></v-text-field>
+                    <v-rating v-model="newReview.rating" background-color="grey" color="teal-darken-3"
+                        :half-increments="true" label="Rating"></v-rating>
+                    <div><v-btn type="submit" color="teal-darken-3" variant="outlined">Submit Review</v-btn></div>
+                </v-form>
             </v-col>
-            <v-col>
 
+            <!-- Right Column for Ratings -->
+            <v-col cols="4">
+                <h1 style="text-decoration: underline; text-decoration-color: #00695C">Ratings</h1>
+                <!-- Display Average Rating -->
+                <div>
+                    <strong>Average Rating:</strong> {{ calculateAverageRating().toFixed(2) }} / 5
+                </div>
+                <!-- Display Rating Stars (You can use Vuetify's v-rating component here) -->
             </v-col>
         </v-row>
-
     </v-container>
 </template>
   
@@ -37,16 +40,44 @@
 export default {
     data() {
         return {
-            userRating: 0, // The user's selected rating
-            averageRating: 3, // Initialize with an average rating (you can set it to your actual initial value)
+            reviews: [
+                {
+                    title: "I love this product! It's amazing.",
+                    rating: 5,
+                },
+                {
+                    title: "It's good but could use some improvements.",
+                    rating: 3,
+                },
+                {
+                    title: "I expected more from this product.",
+                    rating: 2,
+                },
+            ],
+            newReview: {
+                title: "",
+                rating: 0,
+            },
+            averageRating: 0,
         };
     },
     methods: {
-        updateAverageRating(newRating) {
-            // Update the average rating when a new rating is selected
-            this.averageRating = newRating;
+        addReview() {
+            if (this.newReview.title && this.newReview.rating > 0) {
+                this.reviews.push({
+                    title: this.newReview.title,
+                    rating: this.newReview.rating,
+                });
+                this.newReview.title = "";
+                this.newReview.rating = 0;
+            }
+        },
+        calculateAverageRating() {
+            if (this.reviews.length === 0) return 0;
+            const totalRating = this.reviews.length;
+            const sum = this.reviews.reduce((acc, review) => acc + review.rating, 0);
+            return sum / totalRating;
         },
     },
 };
 </script>
-  
