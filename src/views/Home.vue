@@ -14,8 +14,6 @@
 
         <v-img :src="slide.imageSrc" height="100%" cover>
 
-          <!-- Transparent overlay for text -->
-
           <v-sheet color="rgba(0, 0, 0, 0.5)" height="100%">
 
             <div class="d-flex flex-column fill-height justify-center landing-page-title">

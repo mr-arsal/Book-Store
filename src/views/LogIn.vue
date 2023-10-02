@@ -31,7 +31,7 @@ export default {
         return {
             email: "",
             password: "",
-            submitted: false, // Added to track form submission
+            submitted: false, 
         };
     },
     computed: {

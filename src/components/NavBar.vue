@@ -12,11 +12,10 @@
                     <router-link to="/cart" class="text-decoration-none text-white">Cart</router-link>
                 </v-tab>
 
-                <!-- Conditionf for login and logout button -->
+                <!-- Conditions for login and logout button -->
                 <v-tab prepend-icon="mdi-login" v-if="!isLoggedIn">
                     <router-link to="/login" class="text-decoration-none text-white">Login</router-link>
                 </v-tab>
-                <!-- <v-tab v-else prepend-icon="mdi-account" @click="logout">Logout</v-tab> -->
 
                 <v-tab v-else prepend-icon="mdi-account">
                     <router-link to="/userdashboard" class="text-decoration-none text-white">Dashboard</router-link>
@@ -26,7 +25,6 @@
                     <router-link to="/signup" class="text-decoration-none text-white">Signup</router-link>
                 </v-tab>
 
-                <!-- <v-tab prepend-icon="mdi-cart">Cart</v-tab> -->
             </v-tabs>
         </template>
     </v-app-bar>
@@ -61,7 +59,6 @@ export default {
                             window.location.reload();
 
                         } else {
-
                         }
                     })
                     .catch(error => {

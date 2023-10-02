@@ -14,7 +14,6 @@
                     <v-card-text>
                         <div>{{ slide.heading }}</div>
 
-                        <!-- <div>Whitsunday Island, Whitsunday Islands</div> -->
                     </v-card-text>
 
                     <v-card-actions>

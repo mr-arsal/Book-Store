@@ -46,16 +46,14 @@ export default {
     data() {
         return {
             icons: ['mdi-facebook', 'mdi-twitter', 'mdi-instagram', 'mdi-linkedin'],
-            email: '', // Store the email for the newsletter subscription
+            email: '',
         };
     },
     methods: {
         subscribeToNewsletter() {
-            // Handle newsletter subscription logic here
             if (this.email) {
-                // You can send the email to your backend or perform any other actions
                 alert(`Subscribed with email: ${this.email}`);
-                this.email = ''; // Clear the email input after subscription
+                this.email = '';
             }
         },
     },

@@ -129,7 +129,6 @@
 
 <script>
 import NavBar from "@/components/NavBar.vue";
-// import SingleProductDetails from "@/components/SingleProductDetails.vue";
 import Footer from "@/components/Footer.vue";
 import BookReviews from "@/components/BookReviews.vue";
 
@@ -138,7 +137,7 @@ export default {
     props: ['id'],
     data() {
         return {
-            isCartDialogOpen: false, // Track the dialog's open/close state
+            isCartDialogOpen: false,
             isPurchaseDialogOpen: false,
         };
     },
@@ -162,17 +161,14 @@ export default {
 
         // Prices
         incrementPrice() {
-            // Double the price when the increment button is clicked
             this.bookDetails.price *= 2;
         },
         decrementPrice() {
-            // Decrease the price when the decrement button is clicked
             this.bookDetails.price /= 2;
         }
     },
     components: {
         NavBar,
-        // SingleProductDetails,
         Footer,
         BookReviews
     },

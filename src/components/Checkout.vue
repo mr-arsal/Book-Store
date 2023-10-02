@@ -7,13 +7,12 @@
             <v-row>
                 <!-- Checkout Form -->
 
-                <v-col cols="12" >
+                <v-col cols="12">
                     <v-card>
                         <div class="text-center" style="text-decoration: underline; text-decoration-color: #00695C">
                             <v-card-title>Complete Your Information</v-card-title>
                         </div>
                         <v-card-text>
-                            <!-- Your user information form goes here -->
                             <v-form>
                                 <v-text-field label="Full Name"></v-text-field>
                                 <v-text-field label="Email"></v-text-field>
@@ -42,16 +41,13 @@ import NavBar from "@/components/NavBar.vue";
 import Footer from "@/components/Footer.vue";
 
 
-
 export default {
     name: "Checkout",
     components: {
         NavBar,
         Footer,
     },
-
 };
-
 </script>
   
   

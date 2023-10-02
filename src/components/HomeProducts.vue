@@ -91,11 +91,7 @@ export default {
 
 
 <style scoped>
-/* .card-img-top {
-    width: 100%;
-    height: 20vw;
-    object-fit: cover;
-} */
+
 .card-title-size {
     font-size: 20px;
     padding: 0 0 8x;

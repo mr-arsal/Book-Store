@@ -14,7 +14,8 @@
                 <div v-if="reviews.length === 0">
                     <p>No reviews yet.</p>
                 </div>
-                <!-- Option to Add a Review -->
+
+                <!-- Add a Review -->
                 <v-form @submit.prevent="addReview">
                     <v-text-field v-model="newReview.title" label="Review Title" required></v-text-field>
                     <v-rating v-model="newReview.rating" background-color="grey" color="teal-darken-3"
@@ -26,11 +27,9 @@
             <!-- Right Column for Ratings -->
             <v-col cols="4">
                 <h1 style="text-decoration: underline; text-decoration-color: #00695C">Ratings</h1>
-                <!-- Display Average Rating -->
                 <div>
                     <strong>Average Rating:</strong> {{ calculateAverageRating().toFixed(2) }} / 5
                 </div>
-                <!-- Display Rating Stars (You can use Vuetify's v-rating component here) -->
             </v-col>
         </v-row>
     </v-container>
