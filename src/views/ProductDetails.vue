@@ -5,7 +5,7 @@
 
         <!-- SingleProductDetails Component -->
 
-        <div class="bg-image">
+        <div>
             <v-container class=" mb-6">
                 <v-row align="center" no-gutters style="height: 100vh;" v-if="bookDetails">
                     <v-col cols="12" xs="12" md="8" lg="8">
@@ -36,10 +36,6 @@
                         </v-img>
                     </v-col>
                 </v-row>
-
-                <!-- <div class="text-center mb-5 mt-7 text-h4 font-weight-medium"
-                    style="text-decoration: underline; text-decoration-color: #00695C">Book Reviews
-                </div> -->
 
             </v-container>
         </div>
@@ -74,12 +70,11 @@
                         </v-col>
                     </v-row>
 
-
                     <v-card-actions>
                         <v-spacer></v-spacer>
                         <v-btn prepend-icon="mdi-close" class="mt-8" color="teal-darken-3 me-3" @click="closePurchaseDialog"
                             text>Close</v-btn>
-                        <router-link to="/login"><v-btn prepend-icon="mdi-cart" class="mt-8" color="teal-darken-3 me-3"
+                        <router-link to="/checkout"><v-btn prepend-icon="mdi-cart" class="mt-8" color="teal-darken-3 me-3"
                                 text>Checkout</v-btn></router-link>
                     </v-card-actions>
                 </v-card>

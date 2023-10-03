@@ -103,6 +103,7 @@ export const cartBooks = ({ commit }) => {
 
 export const deleteFromCart = ({ commit }, cartId) => {
     const userToken = localStorage.getItem('token');
+    console.log(cartId)
 
     if (userToken) {
         const headers = {
@@ -110,7 +111,7 @@ export const deleteFromCart = ({ commit }, cartId) => {
             'Content-Type': 'application/json',
         };
 
-        axios.delete(`http://10.0.10.211:3300/api/remove/${cartId}`, { headers })
+        axios.delete(`http://10.0.10.211:3300/api/cart/remove/${cartId}`, { headers })
             .then(response => {
                 commit('REMOVE_FROM_CART', cartId);
             })
@@ -204,4 +205,55 @@ export const deleteUser = ({ commit }, userId) => {
         return Promise.reject('No user token found');
     }
 };
+
+// Delete Book By Admin
+
+export const deleteBook = ({ commit }, bookId) => {
+
+    const userToken = localStorage.getItem('token');
+
+    if (userToken) {
+        const headers = {
+            'Authorization': `Bearer ${userToken}`,
+            'Content-Type': 'application/json',
+        };
+
+        axios.delete(`http://10.0.10.211:3300/api/deletebooks/${bookId}`, { headers })
+            .then(response => {
+                // console.log(response)
+                commit('DELETE_BOOK', bookId);
+                // return response.data;
+            })
+            .catch(error => {
+                console.error('Error deleting book:', error);
+                throw error;
+            });
+    } else {
+        console.error('No user token found in local storage.');
+        return Promise.reject('No user token found');
+    }
+};
+
+// Show All Orders
+
+export const showOrders = ({ commit }) => {
+    const userToken = localStorage.getItem('token');
+
+    if (userToken) {
+        const headers = {
+            'Authorization': `Bearer ${userToken}`,
+            'Content-Type': 'application/json',
+        };
+
+        axios.get('http://10.0.10.211:3300/api/show/orders', { headers })
+            .then(response => {
+                commit('SHOW_ORDERS', response.data);
+            })
+            .catch(error => {
+                console.error('Error fetching users:', error);
+            });
+    } else {
+        console.error('No user token found in local storage.');
+    }
+}
 

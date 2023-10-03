@@ -25,7 +25,7 @@
             </v-col>
 
             <!-- Right Column for Ratings -->
-            <v-col cols="4">
+            <v-col cols="6">
                 <h1 style="text-decoration: underline; text-decoration-color: #00695C">Ratings</h1>
                 <div>
                     <strong>Average Rating:</strong> {{ calculateAverageRating().toFixed(2) }} / 5

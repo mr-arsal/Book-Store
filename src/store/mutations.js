@@ -58,7 +58,9 @@ export const CART_BOOKS = (state, cartBook) => {
 // Remove Cart Book
 
 export const REMOVE_FROM_CART = (state, cartId) => {
-    const index = state.cartBook.findIndex(book => book.cart_id === cartId);
+    // console.log(cartId)
+    const index = state.cartBook.findIndex(book => book.id === cartId);
+    // console.log(book.id)
     if (index !== -1) {
         state.cartBook.splice(index, 1);
     }
@@ -86,3 +88,19 @@ export const DELETE_USER = (state, userId) => {
         state.showUsers.splice(index, 1);
     }
 };
+
+// Delete Book by admin
+
+export const DELETE_BOOK = (state, bookId) => {
+    const index = state.books.findIndex(book => book.id === bookId);
+
+    if (index !== -1) {
+        state.books.splice(index, 1);
+    }
+};
+
+// Show Orders
+
+export const SHOW_ORDERS = (state, showOrders) => {
+    state.showOrders = showOrders;
+}

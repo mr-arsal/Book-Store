@@ -24,6 +24,11 @@
 
             </tbody>
         </v-table>
+
+        <!-- Snackbar to show success message -->
+        <v-snackbar v-model="showSnackbar" :timeout="snackbarTimeout">
+            {{ snackbarMessage }}
+        </v-snackbar>
     </v-container>
 </template>
   
@@ -38,6 +43,13 @@ export default {
     components: {
         AdminNav,
         // HomeProducts
+    },
+    data() {
+        return {
+            showSnackbar: false,
+            snackbarMessage: "User has been deleted.",
+            snackbarTimeout: 4000,
+        }
     },
     computed: {
         showUsers() {
@@ -56,6 +68,8 @@ export default {
                 .catch(error => {
                     console.error('Error deleting user:', error);
                 });
+            //  Show the snackbar
+            this.showSnackbar = true;
         },
     },
 

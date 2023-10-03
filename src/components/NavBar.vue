@@ -5,24 +5,29 @@
                 Store</router-link></v-toolbar-title>
         <template v-slot:extension>
             <v-tabs class="mx-auto" align-with-title>
-                <v-tab prepend-icon="mdi-cart">
-                    <router-link to="/products" class="text-decoration-none text-white">Product</router-link>
+                <v-tab prepend-icon="mdi-cart" @click="navigateToProducts">
+                    <!-- <router-link to="/products" class="text-decoration-none text-white">Product</router-link> -->
+                    Products
                 </v-tab>
-                <v-tab prepend-icon="mdi-cart">
-                    <router-link to="/cart" class="text-decoration-none text-white">Cart</router-link>
+                <v-tab prepend-icon="mdi-cart" @click="navigateToCart">
+                    Cart
+                    <!-- <router-link to="/cart" class="text-decoration-none text-white">Cart</router-link> -->
                 </v-tab>
 
                 <!-- Conditions for login and logout button -->
-                <v-tab prepend-icon="mdi-login" v-if="!isLoggedIn">
-                    <router-link to="/login" class="text-decoration-none text-white">Login</router-link>
+                <v-tab prepend-icon="mdi-login" @click="navigateToLogin" v-if="!isLoggedIn">
+                    Login
+                    <!-- <router-link to="/login" class="text-decoration-none text-white">Login</router-link> -->
                 </v-tab>
 
-                <v-tab v-else prepend-icon="mdi-account">
-                    <router-link to="/userdashboard" class="text-decoration-none text-white">Dashboard</router-link>
+                <v-tab v-else prepend-icon="mdi-account" @click="navigateToUserDashboard">
+                    Dashboard
+                    <!-- <router-link to="/userdashboard" class="text-decoration-none text-white">Dashboard</router-link> -->
                 </v-tab>
 
-                <v-tab prepend-icon="mdi-account">
-                    <router-link to="/signup" class="text-decoration-none text-white">Signup</router-link>
+                <v-tab prepend-icon="mdi-account" @click="navigateToSignup">
+                    Signup
+                    <!-- <router-link to="/signup" class="text-decoration-none text-white">Signup</router-link> -->
                 </v-tab>
 
             </v-tabs>
@@ -65,6 +70,26 @@ export default {
                         console.error('Logout failed:', error);
                     });
             }
+        },
+
+        navigateToProducts() {
+            this.$router.push('/products');
+        },
+
+        navigateToCart() {
+            this.$router.push('/cart');
+        },
+
+        navigateToLogin() {
+            this.$router.push('/login');
+        },
+
+        navigateToUserDashboard() {
+            this.$router.push('/userdashboard');
+        },
+
+        navigateToSignup() {
+            this.$router.push('/signup');
         },
     },
 

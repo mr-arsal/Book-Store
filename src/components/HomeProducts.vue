@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-row class="bg-image">
+        <v-row>
             <v-col cols="3" v-for="book of books" :key="book.id" class="mt-7">
                 <v-card class="mx-auto elevation-5" max-width="350">
                     <v-img class="align-end text-white" height="400" :src="book.cover_image_url" cover>

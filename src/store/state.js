@@ -1,3 +1,5 @@
+import { showUsers } from "./actions";
+
 export default {
     // Get all books
     books: [],
@@ -27,5 +29,9 @@ export default {
 
     // Show users to admin
 
-    showUsers: []
+    showUsers: [],
+
+    // Show Orders to admin
+
+    showOrders: []
 }

@@ -22,12 +22,18 @@
                     <td>{{ book.price }}</td>
                     <td class="text-center">
                         <v-btn color="error" class="mr-2" @click="deleteBook(book.id)">Delete</v-btn>
-                        <router-link to="/checkout"><v-btn color="teal-darken-3">Purchase</v-btn></router-link>
+                        <v-btn color="teal-darken-3">Purchase</v-btn>
                     </td>
                 </tr>
 
             </tbody>
         </v-table>
+
+        <!-- Show success message -->
+
+        <v-snackbar v-model="showSnackbar" :timeout="snackbarTimeout">
+            {{ snackbarMessage }}
+        </v-snackbar>
     </v-container>
 
     <!-- Footer Component -->
@@ -44,9 +50,17 @@ export default {
         NavBar,
         Footer
     },
+    data() {
+        return {
+            showSnackbar: false,
+            snackbarMessage: "Book removed from the cart.",
+            snackbarTimeout: 4000,
+        }
+    },
     methods: {
         deleteBook(cartId) {
             this.$store.dispatch('deleteFromCart', cartId);
+            this.showSnackbar = true;
         }
     },
     computed: {

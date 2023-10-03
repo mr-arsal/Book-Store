@@ -67,6 +67,12 @@ const routes = [
       },
 
       {
+        path: "/manageorders",
+        name: "ManageOrders",
+        component: () => import('@/components/ManageOrders.vue'),
+      },
+
+      {
         path: '/categories',
         name: 'Categories',
         component: () => import('@/components/Categories.vue'),

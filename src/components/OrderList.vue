@@ -1,5 +1,5 @@
-<template>
+<template lang="">
     <div>
-        <h1>Order List</h1>
+        adasljd
     </div>
 </template>

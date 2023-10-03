@@ -22,9 +22,8 @@
         </v-row>
     </v-container>
 </template>
-  
-<script>
 
+<script>
 export default {
     data() {
 
@@ -60,16 +59,12 @@ export default {
                     password: this.password,
                 };
                 this.$store.dispatch('userLogin', loginData)
-   
+
                     .then(() => {
-                        if(localStorage.getItem("token"))
-                        {
-                            if(this.email === "admin@gmail.com")
-                            {
+                        if (localStorage.getItem("token")) {
+                            if (this.email === "admin@gmail.com") {
                                 this.$router.push("/admindashboard")
-                            }
-                            else
-                            {
+                            } else {
                                 this.$router.push("/")
                             }
                         }
@@ -89,7 +84,6 @@ export default {
 };
 </script>
 
-  
 <style scoped>
 .elevation-12 {
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);

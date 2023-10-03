@@ -5,10 +5,17 @@
                 Store</router-link></v-toolbar-title>
         <template v-slot:extension>
             <v-tabs class="mx-auto" align-with-title>
+
+                <router-link to="/admindashboard" class="text-decoration-none text-white">Admin Dashboard</router-link>
+                &nbsp;&nbsp;| &nbsp;&nbsp;
+
                 <router-link to="/addbook" class="text-decoration-none text-white"> Add Book</router-link>
                 &nbsp;&nbsp;| &nbsp;&nbsp;
 
                 <router-link to="/allusers" class="text-decoration-none text-white">Users</router-link>
+                &nbsp;&nbsp;| &nbsp;&nbsp;
+
+                <router-link to="/manageorders" class="text-decoration-none text-white">Manage Orders</router-link>
                 &nbsp;&nbsp;| &nbsp;&nbsp;
 
                 <!-- Conditionf for login and logout button -->
