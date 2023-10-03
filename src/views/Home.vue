@@ -38,18 +38,12 @@
 
     <!-- Products Heading -->
 
-    <div class="text-center mb-5 mt-7 text-h4 font-weight-medium"
-      style="text-decoration: underline; text-decoration-color: #00695C">Best Selling Products</div>
+    <div class="text-center text-h4 font-weight-medium" style="margin: 70px;">Best <span style="color: #00695C;">Selling
+        Books</span></div>
 
     <!-- Products Component -->
 
     <HomeProducts></HomeProducts>
-
-    <!-- Explore products Button -->
-
-    <!-- <router-link to="/products" class="text-decoration-none">
-      <v-btn prepend-icon="mdi-cart" class="mt-8" color="teal-darken-3 me-3">Explore Products</v-btn>
-    </router-link> -->
 
     <!-- Footer Component -->
 

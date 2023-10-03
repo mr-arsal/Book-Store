@@ -31,7 +31,7 @@ export default {
         return {
             email: "",
             password: "",
-            submitted: false, 
+            submitted: false,
         };
     },
     computed: {
@@ -60,11 +60,20 @@ export default {
                     password: this.password,
                 };
                 this.$store.dispatch('userLogin', loginData)
-                    // Console User Data
-                    // console.log(userData)
-
+   
                     .then(() => {
-                        this.$router.push('/');
+                        if(localStorage.getItem("token"))
+                        {
+                            if(this.email === "admin@gmail.com")
+                            {
+                                this.$router.push("/admindashboard")
+                            }
+                            else
+                            {
+                                this.$router.push("/")
+                            }
+                        }
+                        // this.$router.push('/');
                     })
                     .catch((error) => {
                         console.error('Login failed:', error);

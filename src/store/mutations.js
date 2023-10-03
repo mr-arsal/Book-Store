@@ -63,3 +63,26 @@ export const REMOVE_FROM_CART = (state, cartId) => {
         state.cartBook.splice(index, 1);
     }
 };
+
+// Add Book (Admin only)
+
+
+export const ADMIN_BOOKS = (state, bookData) => {
+    state.books.unshift(bookData);
+}
+
+// Show Users to admin
+
+export const SHOW_USERS = (state, showUsers) => {
+    state.showUsers = showUsers;
+}
+
+// Delete user by admin
+
+export const DELETE_USER = (state, userId) => {
+    const index = state.showUsers.findIndex(user => user.id === userId);
+
+    if (index !== -1) {
+        state.showUsers.splice(index, 1);
+    }
+};

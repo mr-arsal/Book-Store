@@ -62,7 +62,7 @@ export default {
   
 <style scoped>
 .footer-color {
-    margin-top: 80px;
+    margin-top: 20px;
     background-color: #00695C;
 }
 </style>

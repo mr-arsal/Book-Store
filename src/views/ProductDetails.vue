@@ -5,7 +5,7 @@
 
         <!-- SingleProductDetails Component -->
 
-        <div>
+        <div class="bg-image">
             <v-container class=" mb-6">
                 <v-row align="center" no-gutters style="height: 100vh;" v-if="bookDetails">
                     <v-col cols="12" xs="12" md="8" lg="8">
@@ -36,6 +36,11 @@
                         </v-img>
                     </v-col>
                 </v-row>
+
+                <!-- <div class="text-center mb-5 mt-7 text-h4 font-weight-medium"
+                    style="text-decoration: underline; text-decoration-color: #00695C">Book Reviews
+                </div> -->
+
             </v-container>
         </div>
 
@@ -47,26 +52,17 @@
                     <v-row>
                         <v-col cols="6">
                             <v-card-text>
-                                <!-- Dialog content goes here -->
                                 <h1>{{ bookDetails.title }}</h1>
                             </v-card-text>
                             <v-card-text>
-                                <!-- Dialog content goes here -->
                                 {{ bookDetails.description }}
                             </v-card-text>
                             <v-card-text>
-                                <!-- Dialog content goes here -->
                                 <strong>Author:</strong> {{ bookDetails.author }}
                             </v-card-text>
                             <v-card-text>
-                                <!-- Dialog content goes here -->
                                 <strong>Price:</strong> $ {{ bookDetails.price }}
                             </v-card-text>
-                            <!-- <v-btn icon @click="incrementQuantity">
-
-                                <v-icon>mdi-plus</v-icon>
-
-                            </v-btn> -->
                             <!-- Buttons of increment and decrement -->
 
                             <v-btn @click="incrementPrice" color="teal-darken-3 ms-3 me-5">+</v-btn>
@@ -183,3 +179,5 @@ export default {
 }
 
 </script>
+
+<style></style>

@@ -48,7 +48,24 @@ const routes = [
         ],
       },
 
-      // -------------------------------------------------------
+      {
+        path: "/admindashboard",
+        name: "AdminDashboard",
+        component: () => import('@/components/AdminDashboard.vue'),
+      },
+
+      {
+        path: "/addbook",
+        name: "AddBook",
+        component: () => import('@/components/AddBook.vue'),
+      },
+
+      {
+        path: "/allusers",
+        name: "AllUsers",
+        component: () => import('@/components/AllUsers.vue'),
+      },
+
       {
         path: '/categories',
         name: 'Categories',

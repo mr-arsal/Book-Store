@@ -1,7 +1,7 @@
 <template>
     <div>
-        <v-row>
-            <v-col cols="4" v-for="book of books" :key="book.id" class="mt-7">
+        <v-row class="bg-image">
+            <v-col cols="3" v-for="book of books" :key="book.id" class="mt-7">
                 <v-card class="mx-auto elevation-5" max-width="350">
                     <v-img class="align-end text-white" height="400" :src="book.cover_image_url" cover>
                     </v-img>
@@ -91,7 +91,6 @@ export default {
 
 
 <style scoped>
-
 .card-title-size {
     font-size: 20px;
     padding: 0 0 8x;
@@ -107,5 +106,11 @@ export default {
 
 #book-author {
     padding-top: 0;
+}
+
+.bg-image {
+    /* background-image: url('https://media.istockphoto.com/id/985284752/photo/abstract-blurred-books-manuals-and-textbooks-on-bookshelves-in-library-book-store-at-home-for.jpg?s=612x612&w=0&k=20&c=lQIgpDcJ_hI7Y_6ZwgiUEuymtUp27J2E60oGsB4NiCg='); */
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 </style>
