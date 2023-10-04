@@ -1,6 +1,6 @@
 # Book Store Project Roadmap
 
-Roadmap to achieve the milestones for the Book Store project in 4 days.
+Roadmap to achieve the milestones for the Book Store project in 5 days.
 
 ## Day 1: Completed Tasks Below.
 
@@ -59,7 +59,7 @@ Integrated API using Vuex.
 - Add To Cart
 - Cart Books
 
-## Day 4: Completed Tasks below.
+## Day 5: Completed Tasks below.
 
 Integrated API using Vuex.
 
