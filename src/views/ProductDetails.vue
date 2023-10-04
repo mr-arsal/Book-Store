@@ -4,7 +4,6 @@
         <NavBar></NavBar>
 
         <!-- SingleProductDetails Component -->
-
         <div>
             <v-container class=" mb-6">
                 <v-row align="center" no-gutters style="height: 100vh;" v-if="bookDetails">
@@ -24,8 +23,10 @@
                             <strong>Price:</strong> $ {{ bookDetails.price }}
                         </v-sheet>
                         <!-- Cart Dialoge Button -->
-                        <v-btn prepend-icon="mdi-cart" class="mt-8" color="teal-darken-3 me-3" @click="openCartDialog">
-                            Add to cart</v-btn>
+                        <v-btn prepend-icon="mdi-cart" class="mt-8" color="teal-darken-3 me-3"
+                            @click="openCartDialog(); addToCart(bookDetails.id, bookDetails.price);">
+                            Add to cart
+                        </v-btn>
 
                         <!-- Purchase Dialoge Button -->
                         <v-btn prepend-icon="mdi-heart" class="mt-8" color="teal-darken-3 me-3"
@@ -36,7 +37,6 @@
                         </v-img>
                     </v-col>
                 </v-row>
-
             </v-container>
         </div>
 
@@ -82,13 +82,10 @@
         </v-dialog>
 
         <!-- Add To Cart Dialogue -->
-
         <v-dialog v-model="isCartDialogOpen" width="500">
-
             <template v-slot:default>
                 <v-card>
                     <v-card-title>{{ bookDetails.title }} Is Available!</v-card-title>
-
                     <v-row>
                         <v-col cols="6">
                             <v-card-text>
@@ -110,7 +107,6 @@
         </v-dialog>
 
         <!-- Product Reviews and Rating Component -->
-
         <BookReviews></BookReviews>
 
         <!-- Footer Component -->
@@ -156,6 +152,15 @@ export default {
         },
         decrementPrice() {
             this.bookDetails.price /= 2;
+        },
+
+        // Add To Cart
+        addToCart(id, price) {
+            this.$store.dispatch('addProductToCart', {
+                bookid: id,
+                bookprice: price,
+                quantity: 1
+            })
         }
     },
     components: {
@@ -172,7 +177,4 @@ export default {
         this.$store.dispatch('getBookDetails', this.id)
     },
 }
-
 </script>
-
-<style></style>

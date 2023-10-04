@@ -85,14 +85,11 @@ export default {
                 .catch((error) => {
                     console.error('Error updating user profile:', error);
                 });
-            // Show the snackbar
             this.showSnackbar = true;
         },
     },
 };
 </script>
   
-<style>
-/* Add scoped styles here */
-</style>
+
   

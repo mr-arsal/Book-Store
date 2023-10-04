@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <!-- Navbar Component -->
 
         <NavBar></NavBar>
@@ -60,7 +59,6 @@
         <!-- Footer Component -->
 
         <Footer></Footer>
-
     </div>
 </template>
 
@@ -68,7 +66,6 @@
 import NavBar from "@/components/NavBar.vue";
 import Footer from "@/components/Footer.vue";
 import { allBooks } from "@/store/actions";
-
 
 export default {
     name: "Categories",
@@ -112,9 +109,4 @@ export default {
     padding-top: 0;
 }
 
-.bg-image {
-    /* background-image: url('https://media.istockphoto.com/id/985284752/photo/abstract-blurred-books-manuals-and-textbooks-on-bookshelves-in-library-book-store-at-home-for.jpg?s=612x612&w=0&k=20&c=lQIgpDcJ_hI7Y_6ZwgiUEuymtUp27J2E60oGsB4NiCg='); */
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 </style>

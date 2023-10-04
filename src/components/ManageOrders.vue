@@ -2,7 +2,7 @@
     <!-- Admin Navbar -->
 <AdminNav></AdminNav>
 
-
+<!-- Manage Orders -->
 <v-container class="mt-3 mb-3">
     <v-table class="h-screen">
         <thead>
@@ -24,7 +24,6 @@
                     <v-btn color="error" class="mr-2">Edit</v-btn>
                 </td>
             </tr>
-
         </tbody>
     </v-table>
 </v-container>
@@ -37,7 +36,6 @@ export default {
     name: "ManageOrders",
     components: {
         AdminNav,
-        // HomeProductss
     },
     computed: {
         showOrders() {
@@ -47,6 +45,5 @@ export default {
     mounted() {
         this.$store.dispatch('showOrders')
     },
-
 };
 </script>

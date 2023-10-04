@@ -1,6 +1,5 @@
 <template>
     <v-app-bar color="teal-darken-3">
-        <!-- Removed the v-app-bar-nav-icon -->
         <v-toolbar-title class="text-center"><router-link to="/" class="text-decoration-none text-white">Book
                 Store</router-link></v-toolbar-title>
         <template v-slot:extension>
@@ -11,10 +10,7 @@
                 <router-link to="/userdashboard/orderlist" class="text-decoration-none text-white">Order
                     List</router-link> &nbsp;&nbsp;| &nbsp;&nbsp;
 
-                <router-link to="/userdashboard/trackorder" class="text-decoration-none text-white">Track Your
-                    Order</router-link> &nbsp;&nbsp;| &nbsp;&nbsp;
-
-                <!-- Conditionf for login and logout button -->
+                <!-- Conditions for login and logout button -->
                 <router-link to="/login" class="text-decoration-none text-white" v-if="!isLoggedIn">Login</router-link>
                 <router-link to="/" v-else class="text-decoration-none text-white" @click="logout">Logout</router-link>
 
@@ -60,6 +56,5 @@ export default {
             }
         },
     },
-
 };
 </script>

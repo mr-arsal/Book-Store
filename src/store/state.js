@@ -33,5 +33,9 @@ export default {
 
     // Show Orders to admin
 
-    showOrders: []
+    showOrders: [],
+
+    // User Orders
+
+    userOrders: []
 }

@@ -6,7 +6,7 @@
 
         <v-row>
 
-            <!-- Left-aligned content -->
+            <!-- Left -->
             <v-col cols="12" md="6">
                 <div class="pt-0 text-white mt-5 mb-5">
                     Your one-stop destination for a world of books. Explore a vast collection of literature, fiction,
@@ -15,16 +15,13 @@
                 </div>
             </v-col>
 
-            <!-- Right-aligned Newsletter Section -->
+            <!-- Right -->
 
             <v-col cols="12" md="6">
                 <div class="text-white text-right">
-                    <!-- <h2>Subscribe to Our Newsletter</h2> -->
                     <v-form @submit.prevent="subscribeToNewsletter">
-
                         <v-text-field v-model="email" label="Subscribe to Our Newsletter" required outlined dense
                             class="text-white"></v-text-field>
-
                         <v-btn type="submit" color="teal" dark outlined>
                             Subscribe
                         </v-btn>

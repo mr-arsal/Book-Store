@@ -1,7 +1,6 @@
 import axios from "axios"
 
 // Get All Books
-
 export const allBooks = ({ commit }) => {
     axios.get('http://10.0.10.211:3300/api/showbooks')
         .then(response => {
@@ -10,7 +9,6 @@ export const allBooks = ({ commit }) => {
 }
 
 // Get Book Details
-
 export const getBookDetails = ({ commit }, bookId) => {
     axios.get(`http://10.0.10.211:3300/api/showbooks/${bookId}`)
         .then(response => {
@@ -19,7 +17,6 @@ export const getBookDetails = ({ commit }, bookId) => {
 }
 
 // User Registration
-
 export const registerUser = async ({ commit }, userData) => {
     // try {
     const response = await axios.post('http://10.0.10.211:3300/api/register', userData)
@@ -28,31 +25,22 @@ export const registerUser = async ({ commit }, userData) => {
 };
 
 // User Login
-
 export const userLogin = async ({ commit }, loginData) => {
-    // try {
     const response = await axios.post('http://10.0.10.211:3300/api/login', loginData);
     commit('USER_LOGIN', response.data);
 
-    // Get Token
     const token = response.data.access_token;
     commit('USER_TOKEN', token);
 
-    // Get User Id
     const user = response.data.user_id;
     commit('USER_ID', user);
-
 };
 
 // Book Add To Cart
-
 export const addProductToCart = async ({ commit }, { bookid, quantity, bookprice }) => {
-
-    console.log(bookid, bookprice, quantity);
 
     const userId = localStorage.getItem('userId');
     const token = localStorage.getItem('token');
-
 
     const apiUrl = 'http://10.0.10.211:3300/api/cart/add';
     try {
@@ -67,20 +55,15 @@ export const addProductToCart = async ({ commit }, { bookid, quantity, bookprice
                 'Content-Type': 'application/json',
             }
         });
-
         commit('ADD_TO_CART', response.data)
     } catch (error) {
         console.error('Error adding book to cart:', error);
     }
 };
 
-
 // Cart Books
-
 export const cartBooks = ({ commit }) => {
     const userToken = localStorage.getItem('token');
-
-    // Check if the token exists
     if (userToken) {
         const headers = {
             'Authorization': `Bearer ${userToken}`,
@@ -100,10 +83,8 @@ export const cartBooks = ({ commit }) => {
 }
 
 // Remove Cart Book
-
 export const deleteFromCart = ({ commit }, cartId) => {
     const userToken = localStorage.getItem('token');
-    console.log(cartId)
 
     if (userToken) {
         const headers = {
@@ -124,13 +105,10 @@ export const deleteFromCart = ({ commit }, cartId) => {
 };
 
 // Add Book 
-
 export const addBook = async ({ commit }, bookData) => {
-    console.log(bookData)
     const userToken = localStorage.getItem('token');
 
     if (userToken) {
-
         axios.post('http://10.0.10.211:3300/api/create/bookcatalog', {
             title: bookData.title,
             author: bookData.author,
@@ -154,9 +132,7 @@ export const addBook = async ({ commit }, bookData) => {
     }
 };
 
-
 // Show all users
-
 export const showUsers = ({ commit }) => {
     const userToken = localStorage.getItem('token');
 
@@ -178,12 +154,8 @@ export const showUsers = ({ commit }) => {
 };
 
 // Delete user by admin
-
 export const deleteUser = ({ commit }, userId) => {
-
-    console.log(userId)
     const userToken = localStorage.getItem('token');
-
     if (userToken) {
         const headers = {
             'Authorization': `Bearer ${userToken}`,
@@ -207,9 +179,7 @@ export const deleteUser = ({ commit }, userId) => {
 };
 
 // Delete Book By Admin
-
 export const deleteBook = ({ commit }, bookId) => {
-
     const userToken = localStorage.getItem('token');
 
     if (userToken) {
@@ -234,8 +204,7 @@ export const deleteBook = ({ commit }, bookId) => {
     }
 };
 
-// Show All Orders
-
+// Show All Orders To Admin
 export const showOrders = ({ commit }) => {
     const userToken = localStorage.getItem('token');
 
@@ -251,6 +220,49 @@ export const showOrders = ({ commit }) => {
             })
             .catch(error => {
                 console.error('Error fetching users:', error);
+            });
+    } else {
+        console.error('No user token found in local storage.');
+    }
+}
+
+// Purchase Book
+export const purchaseBook = async ({ user_id, status }) => {
+    const token = localStorage.getItem('token');
+
+    const apiUrl = 'http://10.0.10.211:3300/api/create/orders';
+    try {
+        const response = await axios.post(apiUrl, {
+            user_id: user_id,
+            status: status,
+        }, {
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            }
+        });
+    } catch (error) {
+        console.error('Error adding book to cart:', error);
+    }
+};
+
+// Show user orders
+export const userOrders = ({ commit }) => {
+    const userToken = localStorage.getItem('token');
+    const user_id = localStorage.getItem('userId');
+
+    if (userToken) {
+        const headers = {
+            'Authorization': `Bearer ${userToken}`,
+            'Content-Type': 'application/json',
+        };
+
+        axios.get(`http://10.0.10.211:3300/api/orders/${user_id}`, { headers })
+            .then(response => {
+                commit('USER_ORDERS', response.data);
+            })
+            .catch(error => {
+                console.error('Error fetching orders:', error);
             });
     } else {
         console.error('No user token found in local storage.');

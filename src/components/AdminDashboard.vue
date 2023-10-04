@@ -1,16 +1,13 @@
 <template>
     <!-- Admin Navbar -->
     <AdminNav></AdminNav>
-    <!-- <HomeProducts></HomeProducts> -->
 
     <!-- Books -->
-
     <v-row>
         <v-col cols="3" v-for="book of books" :key="book.id" class="mt-7">
             <v-card class="mx-auto elevation-5" max-width="350">
                 <v-img class="align-end text-white" height="400" :src="book.cover_image_url" cover>
                 </v-img>
-
                 <v-card-text class="card-title card-title-size"
                     style="text-decoration: underline; text-decoration-color: #00695C">
                     <div><strong>{{ book.title }}</strong></div>
@@ -30,12 +27,11 @@
                         Delete
                     </v-btn>
 
-                    <router-link :to="{ name: 'PoductDetails', params: { id: book.id } }" class="text-decoration-none">
+                    <router-link :to="{ name: 'EditBook', params: { id: book.id } }" class="text-decoration-none">
                         <v-btn color="teal-darken-3 ma-2" variant="tonal">
-                            Details
+                            Edit Book
                         </v-btn>
                     </router-link>
-
                 </v-card-actions>
             </v-card>
         </v-col>
@@ -48,17 +44,14 @@
     </v-row>
 </template>
   
-  
 <script>
 
 import AdminNav from "@/components/AdminNav.vue";
-// import HomeProducts from "@/components/HomeProducts.vue";
 
 export default {
     name: "AdminDashboard",
     components: {
         AdminNav,
-        // HomeProductss
     },
     data() {
         return {
@@ -80,10 +73,6 @@ export default {
             this.$store.dispatch('deleteBook', bookId);
             this.showSnackbar = true;
         },
-
-
     }
-
 };
-
 </script>

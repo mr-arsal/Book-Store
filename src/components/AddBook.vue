@@ -1,17 +1,27 @@
 <template>
+    <!-- Admin Navbar Component -->
     <AdminNav></AdminNav>
 
-    <v-container>
-        <form @submit.prevent="submit">
-            <v-text-field v-model="title" label="Title"></v-text-field>
-            <v-text-field v-model="author" label="Author"></v-text-field>
-            <v-text-field v-model="price" label="Price"></v-text-field>
-            <v-text-field v-model="description" label="Description"></v-text-field>
-            <v-text-field v-model="cover_image_url" label="Image url"></v-text-field>
-            <v-btn class="me-4" type="submit" prepend-icon="mdi-login" color="teal-darken-3 me-3">
-                Add Book
-            </v-btn>
-        </form>
+    <!-- Add Book -->
+
+    <v-container fluid>
+        <v-row justify="center">
+            <v-col cols="12" sm="4">
+                <div class="text-center text-h4 font-weight-medium" style="margin: 30px;">Add <span style="color: #00695C;">
+                        Books</span></div>
+
+                <form @submit.prevent="submit">
+                    <v-text-field v-model="title" label="Title"></v-text-field>
+                    <v-text-field v-model="author" label="Author"></v-text-field>
+                    <v-text-field v-model="price" label="Price"></v-text-field>
+                    <v-text-field v-model="description" label="Description"></v-text-field>
+                    <v-text-field v-model="cover_image_url" label="Image url"></v-text-field>
+                    <v-btn class="me-4" type="submit" prepend-icon="mdi-login" color="teal-darken-3 me-3">
+                        Add Book
+                    </v-btn>
+                </form>
+            </v-col>
+        </v-row>
 
         <!-- Snackbar to show success message -->
         <v-snackbar v-model="showSnackbar" :timeout="snackbarTimeout">

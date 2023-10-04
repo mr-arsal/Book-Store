@@ -53,7 +53,6 @@ export default {
         submitForm() {
             this.submitted = true;
             if (this.$refs.loginForm.checkValidity()) {
-                // console.log("Form is valid. Logging in...");
                 const loginData = {
                     email: this.email,
                     password: this.password,
@@ -68,7 +67,6 @@ export default {
                                 this.$router.push("/")
                             }
                         }
-                        // this.$router.push('/');
                     })
                     .catch((error) => {
                         console.error('Login failed:', error);
@@ -104,11 +102,9 @@ export default {
 }
 
 @media screen and (max-width: 600px) {
-
     .elevation-12 {
         margin-top: 20vh;
     }
-
 }
 
 /* Style for invalid input fields */

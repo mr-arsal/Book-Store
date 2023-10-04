@@ -3,6 +3,7 @@
 
     <NavBar></NavBar>
 
+    <!-- Cart Books -->
     <v-container class="mt-3 mb-3">
         <v-table class="h-screen">
             <thead>
@@ -22,10 +23,9 @@
                     <td>{{ book.price }}</td>
                     <td class="text-center">
                         <v-btn color="error" class="mr-2" @click="deleteBook(book.id)">Delete</v-btn>
-                        <v-btn color="teal-darken-3">Purchase</v-btn>
+                        <v-btn color="teal-darken-3" @click="purchaseBook(book.user_id)">Purchase</v-btn>
                     </td>
                 </tr>
-
             </tbody>
         </v-table>
 
@@ -33,6 +33,12 @@
 
         <v-snackbar v-model="showSnackbar" :timeout="snackbarTimeout">
             {{ snackbarMessage }}
+        </v-snackbar>
+
+        <!-- Show success message -->
+
+        <v-snackbar v-model="showPurchase" :timeout="purchaseTimeout">
+            {{ purchaseMessage }}
         </v-snackbar>
     </v-container>
 
@@ -55,12 +61,23 @@ export default {
             showSnackbar: false,
             snackbarMessage: "Book removed from the cart.",
             snackbarTimeout: 4000,
+
+            showPurchase: false,
+            purchaseMessage: "Your order has been placed",
+            purchaseTimeout: 4000,
         }
     },
     methods: {
         deleteBook(cartId) {
             this.$store.dispatch('deleteFromCart', cartId);
             this.showSnackbar = true;
+        },
+        purchaseBook(user_id) {
+            this.$store.dispatch('purchaseBook', {
+                user_id: user_id,
+                status: "pending",
+            });
+            this.showPurchase = true;
         }
     },
     computed: {
@@ -72,6 +89,4 @@ export default {
         this.$store.dispatch('cartBooks')
     },
 }
-
-
 </script>

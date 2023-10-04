@@ -31,6 +31,10 @@ const routes = [
         component: () => import('@/components/UserDashboard.vue'),
         children: [
           {
+            path: "",
+            redirect: "/userdashboard/profile",
+          },
+          {
             path: "profile",
             name: "UserProfile",
             component: () => import('@/components/UserProfile.vue'),
@@ -58,6 +62,12 @@ const routes = [
         path: "/addbook",
         name: "AddBook",
         component: () => import('@/components/AddBook.vue'),
+      },
+
+      {
+        path: "/editbook/:id",
+        name: "EditBook",
+        component: () => import('@/components/EditBook.vue'),
       },
 
       {

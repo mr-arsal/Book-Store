@@ -1,33 +1,27 @@
 <template>
     <v-app-bar color="teal-darken-3">
-        <!-- Removed the v-app-bar-nav-icon -->
         <v-toolbar-title class="text-center"><router-link to="/" class="text-decoration-none text-white">Book
                 Store</router-link></v-toolbar-title>
         <template v-slot:extension>
             <v-tabs class="mx-auto" align-with-title>
                 <v-tab prepend-icon="mdi-cart" @click="navigateToProducts">
-                    <!-- <router-link to="/products" class="text-decoration-none text-white">Product</router-link> -->
                     Products
                 </v-tab>
                 <v-tab prepend-icon="mdi-cart" @click="navigateToCart">
                     Cart
-                    <!-- <router-link to="/cart" class="text-decoration-none text-white">Cart</router-link> -->
                 </v-tab>
 
                 <!-- Conditions for login and logout button -->
                 <v-tab prepend-icon="mdi-login" @click="navigateToLogin" v-if="!isLoggedIn">
                     Login
-                    <!-- <router-link to="/login" class="text-decoration-none text-white">Login</router-link> -->
                 </v-tab>
 
                 <v-tab v-else prepend-icon="mdi-account" @click="navigateToUserDashboard">
                     Dashboard
-                    <!-- <router-link to="/userdashboard" class="text-decoration-none text-white">Dashboard</router-link> -->
                 </v-tab>
 
                 <v-tab prepend-icon="mdi-account" @click="navigateToSignup">
                     Signup
-                    <!-- <router-link to="/signup" class="text-decoration-none text-white">Signup</router-link> -->
                 </v-tab>
 
             </v-tabs>

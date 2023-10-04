@@ -3,10 +3,9 @@
         <!-- Navbar COmponnet -->
         <NavBar />
 
+        <!-- Form -->
         <v-container>
             <v-row>
-                <!-- Checkout Form -->
-
                 <v-col cols="12">
                     <v-card>
                         <div class="text-center" style="text-decoration: underline; text-decoration-color: #00695C">
@@ -26,7 +25,6 @@
                         </v-card-actions>
                     </v-card>
                 </v-col>
-
             </v-row>
         </v-container>
 
@@ -36,10 +34,8 @@
 </template>
   
 <script>
-
 import NavBar from "@/components/NavBar.vue";
 import Footer from "@/components/Footer.vue";
-
 
 export default {
     name: "Checkout",
@@ -49,7 +45,6 @@ export default {
     },
 };
 </script>
-  
   
 <style scoped>
 .product-details {
@@ -78,5 +73,4 @@ export default {
 .product-quantity {
     font-size: 18px;
     margin-top: 10px;
-}
-</style>
+}</style>

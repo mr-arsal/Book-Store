@@ -4,17 +4,13 @@
             <v-col cols="12" sm="8" md="6" lg="4">
                 <v-card class="elevation-12 pa-5">
                     <form @submit.prevent="submitForm" ref="signupForm" novalidate>
-
                         <h2 class="text-center mb-5">Welcome To Sign Up</h2>
-
                         <v-text-field v-model="name" label="Name" required :error-messages="nameErrors"
                             :error="submitted && nameErrors.length > 0"></v-text-field>
-
                         <v-text-field v-model="password" label="Password" type="password" required
                             pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&+=]).*$"
                             title="Password must contain at least one uppercase letter, one lowercase letter, one number, and one symbol."
                             :error-messages="passwordErrors" :error="submitted && passwordErrors.length > 0"></v-text-field>
-
                         <v-text-field v-model="email" label="E-mail" required type="email" :error-messages="emailErrors"
                             :error="submitted && emailErrors.length > 0"></v-text-field>
                         <div class="text-center">
@@ -30,8 +26,6 @@
         </v-row>
     </v-container>
 </template>
-  
-  
   
 <script>
 export default {
@@ -81,9 +75,6 @@ export default {
                     password: this.password,
                 };
                 this.$store.dispatch('registerUser', userData)
-                    // Console User Data
-                    // console.log(userData)
-
                     .then(() => {
                         this.$router.push('/login');
                     })
@@ -100,8 +91,6 @@ export default {
     },
 };
 </script>
-  
-  
   
 <style scoped>
 .elevation-12 {

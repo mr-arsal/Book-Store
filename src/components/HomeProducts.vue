@@ -5,7 +5,6 @@
                 <v-card class="mx-auto elevation-5" max-width="350">
                     <v-img class="align-end text-white" height="400" :src="book.cover_image_url" cover>
                     </v-img>
-
                     <v-card-text class="card-title card-title-size"
                         style="text-decoration: underline; text-decoration-color: #00695C">
                         <div><strong>{{ book.title }}</strong></div>
@@ -19,7 +18,6 @@
                     <v-card-text id="book-author">
                         <div class="card-subheadings"><Strong>Author: </Strong>{{ book.author }}</div>
                     </v-card-text>
-
                     <v-card-actions>
                         <router-link to="">
                             <v-btn @click="addToCart(book.id, book.price); snackbar = true" prepend-icon="mdi-cart"
@@ -27,7 +25,6 @@
                                 Add to cart
                             </v-btn>
                         </router-link>
-
 
                         <!-- Snackbar -->
 
@@ -58,8 +55,6 @@
 
 <script>
 import { allBooks } from "@/store/actions";
-// import { mapActions } from 'vuex';
-
 
 export default {
     name: "HomeProducts",
@@ -89,7 +84,6 @@ export default {
 
 </script>
 
-
 <style scoped>
 .card-title-size {
     font-size: 20px;
@@ -106,11 +100,5 @@ export default {
 
 #book-author {
     padding-top: 0;
-}
-
-.bg-image {
-    /* background-image: url('https://media.istockphoto.com/id/985284752/photo/abstract-blurred-books-manuals-and-textbooks-on-bookshelves-in-library-book-store-at-home-for.jpg?s=612x612&w=0&k=20&c=lQIgpDcJ_hI7Y_6ZwgiUEuymtUp27J2E60oGsB4NiCg='); */
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 </style>

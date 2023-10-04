@@ -1,6 +1,5 @@
 <template>
     <v-app-bar color="teal-darken-3">
-        <!-- Removed the v-app-bar-nav-icon -->
         <v-toolbar-title class="text-center"><router-link to="/" class="text-decoration-none text-white">Book
                 Store</router-link></v-toolbar-title>
         <template v-slot:extension>
@@ -54,8 +53,6 @@ export default {
                             localStorage.removeItem('userId');
                             localStorage.removeItem('token');
                             window.location.reload();
-                        } else {
-
                         }
                     })
                     .catch(error => {
@@ -64,6 +61,5 @@ export default {
             }
         },
     },
-
 };
 </script>

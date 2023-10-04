@@ -1,7 +1,8 @@
 <template>
+    <!-- Admin Navbar -->
     <AdminNav></AdminNav>
-    <!-- <HomeProducts></HomeProducts> -->
 
+    <!-- All Users -->
     <v-container class="mt-3 mb-3">
         <v-table class="h-screen">
             <thead>
@@ -21,7 +22,6 @@
                         <v-btn color="error" class="mr-2" @click="deleteUser(user.id)">Delete</v-btn>
                     </td>
                 </tr>
-
             </tbody>
         </v-table>
 
@@ -32,17 +32,13 @@
     </v-container>
 </template>
   
-  
 <script>
-
 import AdminNav from "@/components/AdminNav.vue";
-// import HomeProducts from "@/components/HomeProducts.vue";
 
 export default {
     name: "AdminDashboard",
     components: {
         AdminNav,
-        // HomeProducts
     },
     data() {
         return {
@@ -68,11 +64,11 @@ export default {
                 .catch(error => {
                     console.error('Error deleting user:', error);
                 });
+
             //  Show the snackbar
             this.showSnackbar = true;
         },
     },
-
 };
 
 </script>
