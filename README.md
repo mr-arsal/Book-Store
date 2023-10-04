@@ -59,14 +59,14 @@ Integrated API using Vuex.
 - Add To Cart
 - Cart Books
 
-## Day 5: Completed Tasks below.
+## Day 4: Completed Tasks below.
 
 Integrated API using Vuex.
 
 - Implement a admin dashboard.
 - Admin dashboard to manage users, view customer details.
 
-## Day 4: Completed Task
+## Day 5: Completed Task
 
 - Implement a user dashboard and order processing.
 - Implement cart system.
