@@ -1,6 +1,6 @@
 # Book Store Project Roadmap
 
-Roadmap to achieve the milestones for the Book Store project in 5 days.
+Roadmap to achieve the milestones for the Book Store project in 4 days.
 
 ## Day 1: Completed Tasks Below.
 
@@ -66,10 +66,10 @@ Integrated API using Vuex.
 - Implement a admin dashboard.
 - Admin dashboard to manage users, view customer details.
 
-## Day 5
+## Day 4: Completed Task
 
 - Implement a user dashboard and order processing.
-- Implement wishlist and a basic recommendation system.
+- Implement cart system.
 - Develop user profile pages to manage their profiles and order history.
 
 
